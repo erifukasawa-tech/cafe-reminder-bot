@@ -1,0 +1,56 @@
+{
+  "_comment": "社長カフェ／ばっちさんカフェ 未予約者リマインドの名簿。詳細は README.md 参照。",
+  "announcementChannel": {
+    "name": "#1-全体-バックオフィスからお知らせ",
+    "id": "C06A4MB1QB0"
+  },
+  "cafeContacts": {
+    "president": {
+      "label": "社長カフェ",
+      "mentionUserId": "U03FKK5HSJE",
+      "mentionName": "sho.nakajima"
+    },
+    "bacchi": {
+      "label": "ばっちさんカフェ",
+      "mentionUserId": "U08MN3ZV0JY",
+      "mentionName": "ばっち/松尾素直(motonao matsuo)"
+    }
+  },
+  "monthlyRule": {
+    "description": "月の奇数/偶数でグループごとに今月のカフェ種別が決まる (2026年9月〜)",
+    "oddMonth": {
+      "sales_career": "president",
+      "marketing_backoffice": "bacchi"
+    },
+    "evenMonth": {
+      "sales_career": "bacchi",
+      "marketing_backoffice": "president"
+    }
+  },
+  "groups": [
+    {
+      "key": "sales",
+      "label": "営業",
+      "ruleGroup": "sales_career",
+      "leaderMentionUserId": "U06AJ4UHXAQ",
+      "leaderName": "しきりん/仕切悠彦(haruaki shikiri)",
+      "members": ["高橋英人", "仕切悠彦", "藤井瑳也", "不破涼", "望月学"]
+    },
+    {
+      "key": "marketing",
+      "label": "マーケ",
+      "ruleGroup": "marketing_backoffice",
+      "leaderMentionUserId": "U06A4LG3SKY",
+      "leaderName": "たろう/秋元太郎(taro akimoto)",
+      "members": ["高橋優奈"]
+    },
+    {
+      "key": "career",
+      "label": "転職",
+      "ruleGroup": "sales_career",
+      "leaderMentionUserId": "U09U94E5892",
+      "leaderName": "ASU/坂江直子(naoko sakae)",
+      "members": ["近藤流", "原田佑淳子", "坂江直子"]
+    }
+  ]
+}

@@ -26,3 +26,10 @@ Slack に載せるのは受付日時・案内日時・集合場所・物件名�
 5. `previewLatest` を実行して、ログに出る通知文を確認する（この段階では Slack には送られません）。
 6. `setup` を1回だけ実行する（Gmail・外部通信の権限を許可する）。
    - 今届いているメールは通知済みになり、以後5分おきに新着だけが通知されます。
+
+## 現在の設定場所（2026-09-29 設定）
+
+- Apps Script: info@ の Google アカウントのプロジェクト「SUUMO通知」（トリガー: `checkSuumoReservations` 5分おき）
+- Slack Webhook: api.slack.com/apps のアプリ「スーモ反響通知」→ Incoming Webhooks に 2026-09-29 に追加した URL
+- 同じアプリに元からある Webhook URL は、作成元不明の旧JDS反響通知が使っているとみられる。
+  新しい通知の稼働を確認後、元からある方を Remove すると旧通知が止まり、二重通知が解消する。

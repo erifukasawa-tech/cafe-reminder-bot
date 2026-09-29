@@ -1,16 +1,18 @@
 /**
- * SUUMO 内見(見学)予約メール → Slack「#2-ヒアリング予約通知__今は売買のみ」通知
+ * SUUMO 反響(JDS)／内見(見学)予約メール → Slack「#2-ヒアリング予約通知__今は売買のみ」通知
  *
- * info@naikenboys.co.jp に届く reserve-info@kr-hometour.suumo.jp からのメール
- * (見学予約／仮予約／案内日時の変更／キャンセル など)を5分おきに拾い、
- * JDS反響通知と同じチャンネル・同じメンションで Slack に投稿する。
+ * info@naikenboys.co.jp に届く以下のメールを5分おきに拾い、Slack に投稿する。
+ *   - system@jds.suumo.jp              : [リクルートＪＤＳ]反響お知らせメール
+ *   - reserve-info@kr-hometour.suumo.jp : 見学予約／仮予約／案内日時の変更／キャンセル など
  *
  * 設定: スクリプトプロパティ SLACK_WEBHOOK_URL に Incoming Webhook の URL を入れる。
  * 初回: setup() を1回だけ手動実行する(既存メールを通知済みにして、5分おきのトリガーを作る)。
  */
 
-var SEARCH_QUERY = 'from:reserve-info@kr-hometour.suumo.jp newer_than:2d';
-var MENTION = '<!subteam^S08EM4Q17HS>'; // JDS反響通知と同じメンション先
+var JDS_SENDER = 'system@jds.suumo.jp';
+var RESERVE_SENDER = 'reserve-info@kr-hometour.suumo.jp';
+var SEARCH_QUERY = '(from:' + JDS_SENDER + ' OR from:' + RESERVE_SENDER + ') newer_than:2d';
+var MENTION = '<!subteam^S08EM4Q17HS>'; // これまでのJDS反響通知と同じメンション先
 var PROCESSED_KEY = 'PROCESSED_MESSAGE_IDS';
 var MAX_PROCESSED = 500;
 
@@ -45,7 +47,7 @@ function checkSuumoReservations() {
     messages.sort(function (a, b) { return a.getDate() - b.getDate(); });
 
     messages.forEach(function (m) {
-      postToSlack_(buildSlackText_(m.getSubject(), m.getPlainBody()));
+      postToSlack_(buildText_(m));
       processed.push(m.getId());
       saveProcessed_(processed); // 途中で失敗しても二重投稿しないよう1件ごとに保存
     });
@@ -54,11 +56,29 @@ function checkSuumoReservations() {
   }
 }
 
-function buildSlackText_(subject, body) {
-  var f = function (label) {
-    var m = body.match(new RegExp('^\\s*' + label + '：\\s*(.*)$', 'm'));
-    return m && m[1].trim() && m[1].trim() !== '-' ? m[1].trim() : '';
-  };
+function buildText_(m) {
+  return m.getFrom().indexOf(JDS_SENDER) !== -1
+    ? buildJdsText_(m.getPlainBody())
+    : buildReserveText_(m.getSubject(), m.getPlainBody());
+}
+
+function pick_(body, label) {
+  var m = body.match(new RegExp('^\\s*' + label + '：\\s*(.*)$', 'm'));
+  return m && m[1].trim() && m[1].trim() !== '-' ? m[1].trim() : '';
+}
+
+// これまでSlackに流れていたJDS反響通知と同じ体裁
+function buildJdsText_(body) {
+  var lines = [MENTION + ' :envelope_with_arrow: *JDS反響通知が届きました*'];
+  lines.push('*日時：* ' + pick_(body, '日時'));
+  lines.push('*企画：* ' + pick_(body, '企画'));
+  lines.push('*ID：* ' + (pick_(body, 'ＩＤ') || pick_(body, 'ID')));
+  lines.push('*URL：* <https://jds.suumo.jp/>');
+  return lines.join('\n');
+}
+
+function buildReserveText_(subject, body) {
+  var f = function (label) { return pick_(body, label); };
   var url = (body.match(/https:\/\/kr-hometour\.suumo\.jp\/reservations\/\S+/) || [''])[0];
 
   var lines = [MENTION + ' :house: *SUUMO内見予約通知が届きました*'];
@@ -109,10 +129,11 @@ function saveProcessed_(ids) {
     .setProperty(PROCESSED_KEY, JSON.stringify(ids.slice(-MAX_PROCESSED)));
 }
 
-/** 動作確認用: 直近の予約メール1件を Slack に送らずログに出す */
+/** 動作確認用: 直近の反響メール・予約メールを1件ずつ、Slack に送らずログに出す */
 function previewLatest() {
-  var thread = GmailApp.search(SEARCH_QUERY.replace('newer_than:2d', 'newer_than:60d'), 0, 1)[0];
-  if (!thread) { Logger.log('対象メールなし'); return; }
-  var m = thread.getMessages().pop();
-  Logger.log(buildSlackText_(m.getSubject(), m.getPlainBody()));
+  [JDS_SENDER, RESERVE_SENDER].forEach(function (sender) {
+    var thread = GmailApp.search('from:' + sender + ' newer_than:60d', 0, 1)[0];
+    if (!thread) { Logger.log(sender + ': 対象メールなし'); return; }
+    Logger.log(buildText_(thread.getMessages().pop()));
+  });
 }

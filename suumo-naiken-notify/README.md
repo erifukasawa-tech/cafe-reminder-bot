@@ -1,9 +1,14 @@
-# SUUMO 内見予約 → Slack 通知
+# SUUMO 反響・内見予約 → Slack 通知
 
-info@naikenboys.co.jp に届く SUUMO 予約管理システム（`reserve-info@kr-hometour.suumo.jp`）のメールを、
-JDS反響通知と同じ `#2-ヒアリング予約通知__今は売買のみ` に自動で通知する Google Apps Script です。
+info@naikenboys.co.jp に届く SUUMO の反響メールと内見予約メールを、
+`#2-ヒアリング予約通知__今は売買のみ` に自動で通知する Google Apps Script です。
 
-対象のメール（差出人が同じものはすべて対象）:
+## 反響（JDS）: `system@jds.suumo.jp`
+- [リクルートＪＤＳ]反響お知らせメール → これまでと同じ「JDS反響通知が届きました」の体裁で通知
+
+作成元がわからなくなっていた旧JDS反響通知の代わりです。旧通知が動き続けている間は、反響が2回通知されます。
+
+## 内見予約: `reserve-info@kr-hometour.suumo.jp`（差出人が同じものはすべて対象）
 - 【SUUMO】見学予約のお申し込みがありました（即時予約）
 - 【SUUMO】仮予約のお申し込みがありました
 - 【要確認】案内日時の変更がありました

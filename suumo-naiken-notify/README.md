@@ -6,7 +6,7 @@ info@naikenboys.co.jp に届く SUUMO の反響メールと内見予約メール
 ## 反響（JDS）: `system@jds.suumo.jp`
 - [リクルートＪＤＳ]反響お知らせメール → これまでと同じ「JDS反響通知が届きました」の体裁で通知
 
-作成元がわからなくなっていた旧JDS反響通知の代わりです。旧通知が動き続けている間は、反響が2回通知されます。
+作成元がわからなくなっていた旧JDS反響通知の代わりです（旧通知は停止済み）。
 
 ## 内見予約: `reserve-info@kr-hometour.suumo.jp`（差出人が同じものはすべて対象）
 - 【SUUMO】見学予約のお申し込みがありました（即時予約）
@@ -31,5 +31,5 @@ Slack に載せるのは受付日時・案内日時・集合場所・物件名�
 
 - Apps Script: info@ の Google アカウントのプロジェクト「SUUMO通知」（トリガー: `checkSuumoReservations` 5分おき）
 - Slack Webhook: api.slack.com/apps のアプリ「スーモ反響通知」→ Incoming Webhooks に 2026-09-29 に追加した URL
-- 同じアプリに元からある Webhook URL は、作成元不明の旧JDS反響通知が使っているとみられる。
-  新しい通知の稼働を確認後、元からある方を Remove すると旧通知が止まり、二重通知が解消する。
+- 旧JDS反響通知（3〜5月は Zapier、6/7〜9/28 は同アプリの旧 Webhook 経由）は、2026-09-29 に旧 Webhook URL を削除して停止済み。
+  今後はこのスクリプトだけが反響・内見予約を通知する。

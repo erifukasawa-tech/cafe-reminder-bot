@@ -5,9 +5,12 @@
  *   - system@jds.suumo.jp              : [リクルートＪＤＳ]反響お知らせメール
  *   - reserve-info@kr-hometour.suumo.jp : 見学予約／仮予約／案内日時の変更／キャンセル など
  *
- * 設定: スクリプトプロパティ SLACK_WEBHOOK_URL に Incoming Webhook の URL を入れる。
+ * 設定: 下の SLACK_WEBHOOK_URL の '' の間に Slack の Webhook URL を貼る。
  * 初回: setup() を1回だけ手動実行する(既存メールを通知済みにして、5分おきのトリガーを作る)。
  */
+
+// ↓↓↓ ここの '' の間に、Slack で作った https://hooks.slack.com/services/... のURLを貼る ↓↓↓
+var SLACK_WEBHOOK_URL = '';
 
 var JDS_SENDER = 'system@jds.suumo.jp';
 var RESERVE_SENDER = 'reserve-info@kr-hometour.suumo.jp';
@@ -106,8 +109,9 @@ function buildReserveText_(subject, body) {
 }
 
 function postToSlack_(text) {
-  var webhook = PropertiesService.getScriptProperties().getProperty('SLACK_WEBHOOK_URL');
-  if (!webhook) throw new Error('スクリプトプロパティ SLACK_WEBHOOK_URL が未設定です');
+  var webhook = SLACK_WEBHOOK_URL ||
+    PropertiesService.getScriptProperties().getProperty('SLACK_WEBHOOK_URL');
+  if (!webhook) throw new Error('コードの一番上の SLACK_WEBHOOK_URL にSlackのURLを貼ってください');
   var res = UrlFetchApp.fetch(webhook, {
     method: 'post',
     contentType: 'application/json',

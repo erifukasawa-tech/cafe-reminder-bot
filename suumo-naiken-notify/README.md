@@ -22,7 +22,7 @@ Slack に載せるのは受付日時・案内日時・集合場所・物件名�
 1. info@naikenboys.co.jp のアカウントで https://script.google.com を開き、新しいプロジェクトを作る。
 2. `Code.gs` の中身をそのまま貼り付けて保存する。
 3. Slack の Incoming Webhook を `#2-ヒアリング予約通知__今は売買のみ` 向けに用意する（JDS反響通知で使っている Webhook があればそれを流用して構いません）。
-4. プロジェクトの設定 → スクリプトプロパティに `SLACK_WEBHOOK_URL` = Webhook の URL を追加する。
+4. コードの一番上の `var SLACK_WEBHOOK_URL = '';` の `''` の間に Webhook の URL を貼って保存する（このリポジトリには実際のURLを書かないこと）。
 5. `previewLatest` を実行して、ログに出る通知文を確認する（この段階では Slack には送られません）。
 6. `setup` を1回だけ実行する（Gmail・外部通信の権限を許可する）。
    - 今届いているメールは通知済みになり、以後5分おきに新着だけが通知されます。

@@ -2,8 +2,8 @@
 
 Slack `#1-全体-バックオフィス周知` (channel_id: `C06A4MB1QB0`) の投稿を、平日毎朝 Routine が Google ドキュメントに追記します。NotebookLM ではこのドキュメントをソースとして登録しておくだけで、毎回の手動アップロードが要らなくなります。
 
-- 転記先ドキュメント: [【NotebookLM用】バックオフィス周知ログ（Slack自動転記）](https://docs.google.com/document/d/1UwFjICr74VX7JFyetjanFuqXCwfNEZpbu3TIV5gGfG0/edit)
-  - documentId: `1UwFjICr74VX7JFyetjanFuqXCwfNEZpbu3TIV5gGfG0`
+- 転記先ドキュメント: [LM用資料](https://docs.google.com/document/d/1SO5uhb0YqGVNnlho1hL1sEMLee-fmstC6tttO2PbSAo/edit)
+  - documentId: `1SO5uhb0YqGVNnlho1hL1sEMLee-fmstC6tttO2PbSAo`
 - 転記内容: トップレベル投稿をほぼ原文のまま（日時・投稿者付き）。投稿者本人がスレッドに書いた補足・訂正も一緒に入れる。
 - 重複防止: 各投稿の末尾に `[slack_ts:...]` を書き、次回はそれより新しい投稿だけを取り込む。数日 Routine が止まっても、次の実行で抜けた分をまとめて取り込む。
 
@@ -31,7 +31,7 @@ Slack `#1-全体-バックオフィス周知` (channel_id: `C06A4MB1QB0`) の投
 
 ## 対象
 - Slackチャンネル: #1-全体-バックオフィス周知 (channel_id: C06A4MB1QB0)
-- 転記先Googleドキュメント: documentId = 1UwFjICr74VX7JFyetjanFuqXCwfNEZpbu3TIV5gGfG0
+- 転記先Googleドキュメント: documentId = 1SO5uhb0YqGVNnlho1hL1sEMLee-fmstC6tttO2PbSAo
 
 ## 手順
 

@@ -48,3 +48,7 @@
 - Claude Code の `create_trigger` API 経由では、このアカウントの組織設定によりSlackコネクタをRoutineに持たせられなかったため、claude.aiのRoutines画面から手動で作成する必要があります。
 - Slack への投稿権限(Slack コネクタ)をRoutine作成時にONにする必要があります。接続が切れている場合はRoutineが失敗するので、深澤さんのSlack連携が有効な状態を保ってください。
 - 誤判定に気づいた場合は、まず該当週は手動で投稿を修正し、`config/roster.json` や `docs/routine-prompt.md` の判定ロジックの記述を見直してください。
+
+## 関連: バックオフィス周知 → NotebookLM 自動転記
+
+`#1-全体-バックオフィス周知` の投稿を平日毎朝 Google ドキュメントに追記し、NotebookLM のソースとして使う Routine の仕様とプロンプトは [docs/notebooklm-sync.md](docs/notebooklm-sync.md) にあります。

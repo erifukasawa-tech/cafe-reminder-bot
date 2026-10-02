@@ -34,12 +34,12 @@
 freee人事労務の従業員一覧(部署)から作成した名簿。役員(中島翔さん・松尾素直さん)は対象外。
 
 - 【営業】担当者メンション: <@U06AJ4UHXAQ> (しきりん/仕切悠彬(haruaki shikiri))
-  - メンバー: 髙橋英人(Slack ID不明・氏名で照合), 仕切悠彬(Slack: U06AJ4UHXAQ), 藤井祐也(Slack: U06ACNZQXLM), 生田智子(Slack: U03TPFY7J9M), 久保田舞(Slack: U072K4FAVCM), 不破涼(Slack: U08SRF75G0J), 横山唯(Slack: U09PWF0MFUG), 望月学(Slack: U0A8WJF0C83), 砂辺仁志(Slack: U0AMDQHE3D1)(退職予定 2026-10-25。この日以降は対象外)
+  - メンバー: 髙橋英人(Slack: U03URE4A7U3。Slack表示名は「まっつん/松田爽」), 仕切悠彬(Slack: U06AJ4UHXAQ), 藤井祐也(Slack: U06ACNZQXLM), 生田智子(Slack: U03TPFY7J9M), 久保田舞(Slack: U072K4FAVCM), 不破涼(Slack: U08SRF75G0J), 横山唯(Slack: U09PWF0MFUG), 望月学(Slack: U0A8WJF0C83), 砂辺仁志(Slack: U0AMDQHE3D1)(退職予定 2026-10-25。この日以降は対象外)
 - 【マーケ】担当者メンション: <@U06A4LG3SKY> (たろう/秋元太郎(taro akimoto))
   - メンバー: 秋元太郎(Slack: U06A4LG3SKY), 青柳優音(Slack: U06AUA5M2N5), 伊藤凌(Slack: U08AJ0B4WQ7), 高橋優奈(Slack: U0A6A84JCET), 相川美彩(Slack: U0AACJMFCE8), 越川里穂(Slack: U0AEBDT6XGA), 宮下直也(Slack: U0ARGM23P8Q)
 - 【転職】担当者メンション: <@U09U94E5892> (ASU/坂江直子(naoko sakae))
   - メンバー: 坂江直子(Slack: U09U94E5892), 近藤流(Slack: U0B6F1V13NK), 原田佑凜子(Slack: U0BDSFR12UC), 照屋裕美(Slack: U0BMPH1A0MN)
-- 【バックオフィス】担当者メンション: <@U08NUG11WBG> (えりりん/深澤恵利(eri fukasawa))
+- 【バックオフィス】担当者メンション: <@U06ACP4JPMK> (つん/北野翼(tsubasa kitano))
   - メンバー: 深澤恵利(Slack: U08NUG11WBG), 北野翼(Slack: U06ACP4JPMK), 齋藤朱音(Slack: U0BRM8W1231)
 
 (名簿は cafe-reminder-bot リポジトリの config/roster.json にも保存されている。もしそのリポジトリがこのセッションのワークスペースに存在し、内容がここに書いた名簿と食い違っていたら、リポジトリ側の config/roster.json を正として使うこと。)
@@ -75,7 +75,7 @@ freee人事労務の従業員一覧(部署)から作成した名簿。役員(中
 【転職】社長カフェ <@U09U94E5892>
 • ...
 
-【バックオフィス】ばっちさんカフェ <@U08NUG11WBG>
+【バックオフィス】ばっちさんカフェ <@U06ACP4JPMK>
 • ...
 ```
 (カフェ種別ラベルは当月ルールに従って実際の値に置き換えること。氏名は名簿の表記で書く)

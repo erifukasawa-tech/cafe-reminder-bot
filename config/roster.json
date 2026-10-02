@@ -38,8 +38,8 @@
       "members": [
         {
           "name": "髙橋英人",
-          "slackUserId": null,
-          "note": "Slackアカウント未確認。氏名で照合"
+          "slackUserId": "U03URE4A7U3",
+          "note": "Slack上の表示名は「まっつん/松田爽」"
         },
         {
           "name": "仕切悠彬",
@@ -146,8 +146,8 @@
       "label": "バックオフィス",
       "freeeGroup": "管理部",
       "ruleGroup": "marketing_backoffice",
-      "leaderMentionUserId": "U08NUG11WBG",
-      "leaderName": "えりりん/深澤恵利(eri fukasawa)",
+      "leaderMentionUserId": "U06ACP4JPMK",
+      "leaderName": "つん/北野翼(tsubasa kitano)",
       "members": [
         {
           "name": "深澤恵利",
@@ -157,7 +157,7 @@
         {
           "name": "北野翼",
           "slackUserId": "U06ACP4JPMK",
-          "note": "freee上の氏名は井出翼"
+          "note": "旧姓北野。新姓井出のためfreee上の氏名は井出翼。Slack表示名は北野翼"
         },
         {
           "name": "齋藤朱音",

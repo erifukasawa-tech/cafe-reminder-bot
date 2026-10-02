@@ -223,9 +223,14 @@ function saveProcessed_(ids) {
 /** 動作確認用: 直近の反響メール・予約メールを1件ずつ、Slack に送らずログに出す */
 function previewLatest() {
   [JDS_SENDER, RESERVE_SENDER].forEach(function (sender) {
-    var thread = GmailApp.search('from:' + sender + ' newer_than:60d', 0, 1)[0];
-    if (!thread) { Logger.log(sender + ': 対象メールなし'); return; }
-    Logger.log(buildText_(thread.getMessages().pop()));
+    var threads = GmailApp.search('from:' + sender + ' newer_than:60d', 0, 10);
+    for (var i = 0; i < threads.length; i++) {
+      var m = threads[i].getMessages().pop();
+      if (sender === JDS_SENDER && !isJdsInquiry_(m.getSubject())) continue; // 設定確認メールなどは飛ばす
+      Logger.log(buildText_(m));
+      return;
+    }
+    Logger.log(sender + ': 対象メールなし');
   });
 }
 

@@ -229,6 +229,14 @@ function previewLatest() {
   });
 }
 
+/** テスト用: 直近の反響メール・予約メールを1件ずつ、テスト送信として Slack に投稿する */
+function testSlack() {
+  [JDS_SENDER, RESERVE_SENDER].forEach(function (sender) {
+    var thread = GmailApp.search('from:' + sender + ' newer_than:60d', 0, 1)[0];
+    if (thread) postToSlack_('（テスト送信・対応不要）\n' + buildText_(thread.getMessages().pop()));
+  });
+}
+
 /** 動作確認用: 直近のJDS反響メールの本文そのものと、通知文をログに出す(Slackには送らない) */
 function previewLatestJdsRaw() {
   var threads = GmailApp.search('from:' + JDS_SENDER + ' newer_than:60d', 0, 10);

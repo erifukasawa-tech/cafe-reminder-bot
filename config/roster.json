@@ -1,7 +1,7 @@
 {
-  "_comment": "社長カフェ／ばっちさんカフェ 未予約者リマインドの名簿。詳細は README.md 参照。",
+  "_comment": "社長カフェ／ばっちさんカフェ 未予約者リマインドの名簿。freee人事労務の従業員一覧(部署)から作成(2026-10-02時点)。役員(中島翔・松尾素直)は対象外。詳細は README.md 参照。",
   "announcementChannel": {
-    "name": "#1-全体-バックオフィスからお知らせ",
+    "name": "#1-全体-バックオフィス周知",
     "id": "C06A4MB1QB0"
   },
   "cafeContacts": {
@@ -31,26 +31,147 @@
     {
       "key": "sales",
       "label": "営業",
+      "freeeGroup": "営業部",
       "ruleGroup": "sales_career",
       "leaderMentionUserId": "U06AJ4UHXAQ",
-      "leaderName": "しきりん/仕切悠彦(haruaki shikiri)",
-      "members": ["高橋英人", "仕切悠彦", "藤井瑳也", "不破涼", "望月学"]
+      "leaderName": "しきりん/仕切悠彬(haruaki shikiri)",
+      "members": [
+        {
+          "name": "髙橋英人",
+          "slackUserId": null,
+          "note": "Slackアカウント未確認。氏名で照合"
+        },
+        {
+          "name": "仕切悠彬",
+          "slackUserId": "U06AJ4UHXAQ"
+        },
+        {
+          "name": "藤井祐也",
+          "slackUserId": "U06ACNZQXLM"
+        },
+        {
+          "name": "生田智子",
+          "slackUserId": "U03TPFY7J9M"
+        },
+        {
+          "name": "久保田舞",
+          "slackUserId": "U072K4FAVCM"
+        },
+        {
+          "name": "不破涼",
+          "slackUserId": "U08SRF75G0J"
+        },
+        {
+          "name": "横山唯",
+          "slackUserId": "U09PWF0MFUG"
+        },
+        {
+          "name": "望月学",
+          "slackUserId": "U0A8WJF0C83"
+        },
+        {
+          "name": "砂辺仁志",
+          "slackUserId": "U0AMDQHE3D1",
+          "retireDate": "2026-10-25"
+        }
+      ]
     },
     {
       "key": "marketing",
       "label": "マーケ",
+      "freeeGroup": "マーケティング部",
       "ruleGroup": "marketing_backoffice",
       "leaderMentionUserId": "U06A4LG3SKY",
       "leaderName": "たろう/秋元太郎(taro akimoto)",
-      "members": ["高橋優奈"]
+      "members": [
+        {
+          "name": "秋元太郎",
+          "slackUserId": "U06A4LG3SKY"
+        },
+        {
+          "name": "青柳優音",
+          "slackUserId": "U06AUA5M2N5",
+          "note": "freee上の表記は青桺"
+        },
+        {
+          "name": "伊藤凌",
+          "slackUserId": "U08AJ0B4WQ7"
+        },
+        {
+          "name": "高橋優奈",
+          "slackUserId": "U0A6A84JCET"
+        },
+        {
+          "name": "相川美彩",
+          "slackUserId": "U0AACJMFCE8"
+        },
+        {
+          "name": "越川里穂",
+          "slackUserId": "U0AEBDT6XGA"
+        },
+        {
+          "name": "宮下直也",
+          "slackUserId": "U0ARGM23P8Q"
+        }
+      ]
     },
     {
       "key": "career",
       "label": "転職",
+      "freeeGroup": "転職ぼーいず",
       "ruleGroup": "sales_career",
       "leaderMentionUserId": "U09U94E5892",
       "leaderName": "ASU/坂江直子(naoko sakae)",
-      "members": ["近藤流", "原田佑淳子", "坂江直子"]
+      "members": [
+        {
+          "name": "坂江直子",
+          "slackUserId": "U09U94E5892"
+        },
+        {
+          "name": "近藤流",
+          "slackUserId": "U0B6F1V13NK"
+        },
+        {
+          "name": "原田佑凜子",
+          "slackUserId": "U0BDSFR12UC"
+        },
+        {
+          "name": "照屋裕美",
+          "slackUserId": "U0BMPH1A0MN"
+        }
+      ]
+    },
+    {
+      "key": "backoffice",
+      "label": "バックオフィス",
+      "freeeGroup": "管理部",
+      "ruleGroup": "marketing_backoffice",
+      "leaderMentionUserId": "U08NUG11WBG",
+      "leaderName": "えりりん/深澤恵利(eri fukasawa)",
+      "members": [
+        {
+          "name": "深澤恵利",
+          "slackUserId": "U08NUG11WBG",
+          "note": "freee上の氏名は小柳恵利"
+        },
+        {
+          "name": "北野翼",
+          "slackUserId": "U06ACP4JPMK",
+          "note": "freee上の氏名は井出翼"
+        },
+        {
+          "name": "齋藤朱音",
+          "slackUserId": "U0BRM8W1231"
+        }
+      ]
     }
-  ]
+  ],
+  "source": {
+    "system": "freee人事労務 従業員一覧(employee_group_memberships)",
+    "asOf": "2026-10-02",
+    "excluded": [
+      "中島翔(役員)",
+      "松尾素直(役員)"
+    ]
+  }
 }

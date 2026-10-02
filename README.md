@@ -1,5 +1,7 @@
 # cafe-reminder-bot
 
+> マーケデイリー定例(Notion)の自動作成 Routine の仕様もこのリポジトリで管理しています → [docs/marke-daily-routine.md](docs/marke-daily-routine.md)
+
 毎週金曜 10:30(JST)に、Claude の定期トリガーが自動で実行する「社長カフェ／ばっちさんカフェ 未予約者リマインド」の仕様と設定を管理するリポジトリです。
 
 実行主体はサーバーやCIではなく、claude.ai の Routines(定期実行)機能です。毎週金曜10:30(JST)にRoutineが新しいセッションを起動し、Slack MCP 連携を使って以下を行います。Routineの作成手順とそのまま貼り付けるプロンプトは [docs/routine-prompt.md](docs/routine-prompt.md) を参照してください。

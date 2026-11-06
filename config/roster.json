@@ -1,8 +1,9 @@
 {
   "_comment": "社長カフェ／ばっちさんカフェ 未予約者リマインドの名簿。詳細は README.md 参照。",
   "announcementChannel": {
-    "name": "#1-全体-バックオフィスからお知らせ",
-    "id": "C06A4MB1QB0"
+    "name": "#1-全体-バックオフィス周知",
+    "id": "C06A4MB1QB0",
+    "note": "翌月分のアナウンスは前月下旬に投稿されることが多い(例: 11月分は2026-10-23投稿)"
   },
   "cafeContacts": {
     "president": {
@@ -33,8 +34,47 @@
       "label": "営業",
       "ruleGroup": "sales_career",
       "leaderMentionUserId": "U06AJ4UHXAQ",
-      "leaderName": "しきりん/仕切悠彦(haruaki shikiri)",
-      "members": ["高橋英人", "仕切悠彦", "藤井瑳也", "不破涼", "望月学"]
+      "leaderName": "しきりん/仕切悠彬(haruaki shikiri)",
+      "members": [
+        {
+          "name": "髙橋英人",
+          "slackUserId": "U03URE4A7U3",
+          "note": "Slack表示名は「まっつん/松田爽」"
+        },
+        {
+          "name": "仕切悠彬",
+          "slackUserId": "U06AJ4UHXAQ"
+        },
+        {
+          "name": "藤井祐也",
+          "slackUserId": "U06ACNZQXLM"
+        },
+        {
+          "name": "生田智子",
+          "slackUserId": "U03TPFY7J9M"
+        },
+        {
+          "name": "久保田舞",
+          "slackUserId": "U072K4FAVCM"
+        },
+        {
+          "name": "不破涼",
+          "slackUserId": "U08SRF75G0J"
+        },
+        {
+          "name": "横山唯",
+          "slackUserId": "U09PWF0MFUG"
+        },
+        {
+          "name": "望月学",
+          "slackUserId": "U0A8WJF0C83"
+        },
+        {
+          "name": "砂辺仁志",
+          "slackUserId": "U0AMDQHE3D1",
+          "leaveDate": "2026-10-25"
+        }
+      ]
     },
     {
       "key": "marketing",
@@ -42,7 +82,36 @@
       "ruleGroup": "marketing_backoffice",
       "leaderMentionUserId": "U06A4LG3SKY",
       "leaderName": "たろう/秋元太郎(taro akimoto)",
-      "members": ["高橋優奈"]
+      "members": [
+        {
+          "name": "秋元太郎",
+          "slackUserId": "U06A4LG3SKY"
+        },
+        {
+          "name": "青柳優音",
+          "slackUserId": "U06AUA5M2N5"
+        },
+        {
+          "name": "伊藤凌",
+          "slackUserId": "U08AJ0B4WQ7"
+        },
+        {
+          "name": "高橋優奈",
+          "slackUserId": "U0A6A84JCET"
+        },
+        {
+          "name": "相川美彩",
+          "slackUserId": "U0AACJMFCE8"
+        },
+        {
+          "name": "越川里穂",
+          "slackUserId": "U0AEBDT6XGA"
+        },
+        {
+          "name": "宮下直也",
+          "slackUserId": "U0ARGM23P8Q"
+        }
+      ]
     },
     {
       "key": "career",
@@ -50,7 +119,45 @@
       "ruleGroup": "sales_career",
       "leaderMentionUserId": "U09U94E5892",
       "leaderName": "ASU/坂江直子(naoko sakae)",
-      "members": ["近藤流", "原田佑淳子", "坂江直子"]
+      "members": [
+        {
+          "name": "坂江直子",
+          "slackUserId": "U09U94E5892"
+        },
+        {
+          "name": "近藤流",
+          "slackUserId": "U0B6F1V13NK"
+        },
+        {
+          "name": "原田佑凜子",
+          "slackUserId": "U0BDSFR12UC"
+        },
+        {
+          "name": "照屋裕美",
+          "slackUserId": "U0BMPH1A0MN"
+        }
+      ]
+    },
+    {
+      "key": "backoffice",
+      "label": "バックオフィス",
+      "ruleGroup": "marketing_backoffice",
+      "leaderMentionUserId": "U06ACP4JPMK",
+      "leaderName": "つん/北野翼(tsubasa kitano)",
+      "members": [
+        {
+          "name": "深澤恵利",
+          "slackUserId": "U08NUG11WBG"
+        },
+        {
+          "name": "北野翼",
+          "slackUserId": "U06ACP4JPMK"
+        },
+        {
+          "name": "齋藤朱音",
+          "slackUserId": "U0BRM8W1231"
+        }
+      ]
     }
   ]
 }

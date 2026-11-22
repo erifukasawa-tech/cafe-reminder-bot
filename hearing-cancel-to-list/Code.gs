@@ -122,7 +122,7 @@ function parseCancelMessage_(msg) {
 
   // 「詳細を表示」ボタン等に入っているイベントURLからイベントIDを取る
   const raw = JSON.stringify(msg);
-  const eventMatch = raw.match(/timerex\.net\/user\/event\/([0-9A-Za-z]+)/);
+  const eventMatch = raw.match(/timerex\.net\/(?:slack|user)\/event\/([0-9A-Za-z]+)/);
   const eventId = eventMatch ? eventMatch[1] : '';
 
   return {
